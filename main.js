@@ -15,7 +15,6 @@ const randHole = (holes) => {
   const index = Math.floor(Math.random() * holes.length)
   const hole = holes[index]
   if (hole === lastHole) {
-    console.log("Thats the same one")
     return randHole(holes)
   }
   lastHole = hole
@@ -49,7 +48,6 @@ function bonk(e) {
   score++;
   this.classList.remove('up');
   scoreBoard.textContent = score;
-  console.log(e)
 }
 
 moles.forEach(mole => mole.addEventListener('click', bonk))
