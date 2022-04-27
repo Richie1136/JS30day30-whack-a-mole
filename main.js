@@ -15,7 +15,7 @@ const randHole = (holes) => {
   const hole = holes[index]
   if (hole === lastHole) {
     console.log("Thats the same one")
-    return randHole(hole)
+    return randHole(holes)
   }
   lastHole = hole
   return hole
