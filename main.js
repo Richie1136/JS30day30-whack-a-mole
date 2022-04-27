@@ -39,3 +39,10 @@ const startGame = () => {
     timeUp = true
   }, 10000);
 }
+
+
+const bonk = (e) => {
+  console.log(e)
+}
+
+moles.forEach(mole => mole.addEventListener('click', bonk))
