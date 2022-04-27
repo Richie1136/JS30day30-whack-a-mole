@@ -4,6 +4,7 @@ const moles = document.querySelectorAll('.mole')
 
 let lastHole;
 let timeUp = false
+let score = 0
 
 
 const randTime = (min, max) => {
@@ -34,14 +35,20 @@ const peep = () => {
 const startGame = () => {
   scoreBoard.textContent = 0
   timeUp = false
+  score = 0
   peep()
   setTimeout(() => {
     timeUp = true
   }, 10000);
 }
 
-
-const bonk = (e) => {
+function bonk(e) {
+  if (!e.isTrusted) {
+    return
+  }
+  score++;
+  this.classList.remove('up');
+  scoreBoard.textContent = score;
   console.log(e)
 }
 
