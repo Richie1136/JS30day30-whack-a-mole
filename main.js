@@ -12,10 +12,17 @@ const randTime = (min, max) => {
 const randHole = (holes) => {
   const index = Math.floor(Math.random() * holes.length)
   const hole = holes[index]
-  console.log(hole)
   if (hole === lastHole) {
     console.log("Thats the same one")
-    randHole(hole)
+    return randHole(hole)
   }
   lastHole = hole
+  return hole
+}
+
+
+const peep = () => {
+  const time = randTime(200, 1000)
+  const hole = randHole(holes)
+  console.log(time, hole)
 }
