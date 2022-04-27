@@ -3,6 +3,7 @@ const scoreBoard = document.querySelector('.score')
 const moles = document.querySelectorAll('.mole')
 
 let lastHole;
+let timeUp = false
 
 
 const randTime = (min, max) => {
@@ -20,9 +21,11 @@ const randHole = (holes) => {
   return hole
 }
 
-
 const peep = () => {
   const time = randTime(200, 1000)
   const hole = randHole(holes)
-  console.log(time, hole)
+  hole.classList.add('up');
+  setTimeout(() => {
+    peep()
+  }, time);
 }
